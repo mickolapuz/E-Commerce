@@ -1,7 +1,7 @@
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import MenuItemStyles from "./MenuItemListCss";
 import { Box, Grid, Typography } from "@mui/material";
-import { MenuItemListProps } from "../../models/Props/MenuItemListProps";
+import { MenuItemListProps } from "../../models/ComponentProps/MenuItemListProps";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";

@@ -1,13 +1,14 @@
 import { AppBar, Box, Drawer, Grid, Toolbar, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenubarStyles from "./MenubarCss";
 import MenuItemList from "./MenuItemList";
 import { useNavigate } from "react-router-dom";
+import { MenuBarProps } from "../../models/ComponentProps/MenuBarProps";
 
-const MenuBar: React.FC = () => {
+const MenuBar: React.FC<MenuBarProps> = (props: MenuBarProps) => {
+  const { open, setOpen } = props;
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
   const classes = MenubarStyles();
 
   const toggleDrawer = (newOpen: boolean) => () => {
