@@ -1,7 +1,6 @@
-import { makeStyles } from "@mui/styles";
 import { COLOR_PALETTE } from "../../styles/constant";
 
-const MenubarStyles = makeStyles(() => ({
+export const getMenubarStyles = () => ({
   appBar: {
     backgroundColor: `${COLOR_PALETTE.darkEspresso.main} !important`,
     height: "64px"
@@ -24,10 +23,5 @@ const MenubarStyles = makeStyles(() => ({
       backgroundColor: COLOR_PALETTE.darkEspresso.main,
       width: "250px"
     }
-  },
-  logo: {
-    height: "80px"
   }
-}));
-
-export default MenubarStyles;
+});

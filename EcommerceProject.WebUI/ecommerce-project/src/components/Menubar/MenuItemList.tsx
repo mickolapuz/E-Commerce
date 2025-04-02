@@ -1,5 +1,4 @@
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import MenuItemStyles from "./MenuItemListCss";
 import { Box, Grid, Typography } from "@mui/material";
 import { MenuItemListProps } from "../../models/ComponentProps/MenuItemListProps";
 import HomeIcon from "@mui/icons-material/Home";
@@ -8,11 +7,12 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import StoreIcon from "@mui/icons-material/Store";
 import { COLOR_PALETTE } from "../../styles/constant";
 import { useNavigate } from "react-router-dom";
+import { getMenuItemListStyles } from "./MenuItemListStyles";
 
 const MenuItemList: React.FC<MenuItemListProps> = (props: MenuItemListProps) => {
+  const styles = getMenuItemListStyles();
   const navigate = useNavigate();
   const { toggleDrawer, open } = props;
-  const classes = MenuItemStyles();
 
   const MenuList = [
     {
@@ -59,14 +59,8 @@ const MenuItemList: React.FC<MenuItemListProps> = (props: MenuItemListProps) => 
   return (
     <>
       <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
-        <Box className={classes.arrowBackIconBox}>
-          {open ? (
-            <ArrowBackIosNewIcon
-              onClick={toggleDrawer(false)}
-              className={classes.menuIcon}
-              sx={{ marginRight: "10px" }}
-            />
-          ) : null}
+        <Box sx={styles.arrowBackIconBox}>
+          {open ? <ArrowBackIosNewIcon onClick={toggleDrawer(false)} sx={styles.menuIcon} /> : null}
         </Box>
         <Grid>
           {MenuList.map(item => (

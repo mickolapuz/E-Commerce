@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MenuBar from "../Menubar/Menubar";
-import Home from "../../pages/Home";
+import Home from "../../pages/Home/Home";
 import Admin from "../../pages/Admin";
 import Cart from "../../pages/Cart";
 import Menu from "../../pages/Menu";
@@ -11,6 +11,7 @@ import { useState } from "react";
 
 const Layout: React.FC = () => {
   const [open, setOpen] = useState(false);
+
   const renderMenuBar: Function = () => {
     return <MenuBar open={open} setOpen={setOpen} />;
   };
@@ -49,7 +50,7 @@ const MainContent: React.FC<{ open: boolean }> = ({ open }) => {
           sm: -1,
           md: -1,
           lg: -2,
-          xl: open ? -14.5 : -46
+          xl: open ? -13.5 : -45.5
         }
       }}
     >
