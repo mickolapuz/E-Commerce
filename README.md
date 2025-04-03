@@ -10,6 +10,6 @@ It is designed as a Shopify-style platform for a coffee shop, allowing customers
 - Payment integration
 
 🚀 Tech Stack:
-Frontend: ReactJS, Material UI
-Backend: ASP.NET Core
-Database: SQL Server
+- Frontend: ReactJS, Material UI
+- Backend: ASP.NET Core
+- Database: SQL Server
