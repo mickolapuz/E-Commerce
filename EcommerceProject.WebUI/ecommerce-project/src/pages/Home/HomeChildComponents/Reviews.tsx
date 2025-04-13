@@ -3,10 +3,12 @@ import { CustomerFeedbacksTestData } from "../TestData";
 import { getReviewsStyles } from "./ReviewsStyles";
 import { useEffect, useState } from "react";
 import ReviewsCard from "../../../components/Card/ReviewsCard";
+import useOpenStore from "../../../store/useOpenStore";
 
 const Reviews = () => {
   const CustomerFeedbacks = CustomerFeedbacksTestData;
-  const styles = getReviewsStyles();
+  const { open } = useOpenStore();
+  const styles = getReviewsStyles(open);
   const [visibleReviews, setVisibleReviews] = useState(CustomerFeedbacks.slice(0, 5));
 
   useEffect(() => {
@@ -18,9 +20,9 @@ const Reviews = () => {
         return newVisibleReviews;
       });
     }, 5000);
-
+    setVisibleReviews(CustomerFeedbacks.slice(0, open ? 4 : 5));
     return () => clearInterval(interval);
-  }, []);
+  }, [open]);
 
   const CustomerReviews: Function = () => {
     return (

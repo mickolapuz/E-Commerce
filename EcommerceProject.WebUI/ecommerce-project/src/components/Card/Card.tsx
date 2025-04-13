@@ -1,14 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
 import { COLOR_PALETTE } from "../../styles/constant";
-
-interface CardProps {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-}
+import { CardProps } from "../../models/ComponentProps/CardProps";
 
 const CustomCard: React.FC<CardProps> = ({ id, name, description, image, price }) => {
   return (
@@ -19,7 +12,7 @@ const CustomCard: React.FC<CardProps> = ({ id, name, description, image, price }
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        border: "2px solid #8B5E3C", // Lighter brown color
+        border: "2px solid #8B5E3C",
         borderRadius: "8px",
         margin: "16px"
       }}

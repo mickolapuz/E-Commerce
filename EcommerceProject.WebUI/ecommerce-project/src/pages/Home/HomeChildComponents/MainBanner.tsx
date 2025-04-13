@@ -1,5 +1,6 @@
-import { Box, Button, Container, Grid, Typography, useTheme } from "@mui/material";
+import { Box, Container, Grid, Typography, useTheme } from "@mui/material";
 import { getMainBannerStyles } from "./MainBannerStyles";
+import CustomButton from "../../../components/Button/Button";
 
 const MainBanner = () => {
   const theme = useTheme();
@@ -23,12 +24,8 @@ const MainBanner = () => {
           Your one-stop shop for all things coffee.
         </Typography>
         <Grid container spacing={2} justifyContent="center">
-          <Button variant="contained" onClick={scrollToFooterSection} sx={styles.button1}>
-            CONTACT US
-          </Button>
-          <Button variant="contained" onClick={scrollToFooterSection} sx={styles.button2}>
-            SHOP NOW
-          </Button>
+          <CustomButton variant="contained" onClick={scrollToFooterSection} sx={styles.button1} label={"CONTACT US"} />
+          <CustomButton variant="contained" onClick={scrollToFooterSection} sx={styles.button2} label={"SHOP NOW"} />
         </Grid>
       </Container>
     </Box>

@@ -1,14 +1,16 @@
 import { COLOR_PALETTE } from "../../../styles/constant";
 
-export const getReviewsStyles = () => ({
+export const getReviewsStyles = (open: boolean) => ({
   grid1: {
     display: "flex",
     transform: "translateX(0)",
-    transition: "transform 0.5s ease-in-out"
+    transition: "transform 0.5s ease-in-out",
+    maxWidth: open ? "calc(1870px - 250px)" : "1870px"
   },
   grid2: {
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    maxWidth: open ? "calc(1870px - 250px)" : "1870px"
   },
   divider: {
     borderColor: COLOR_PALETTE.darkEspresso.main,

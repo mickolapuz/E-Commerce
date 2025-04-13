@@ -3,12 +3,12 @@ import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItemList from "./MenuItemList";
 import { useNavigate } from "react-router-dom";
-import { MenuBarProps } from "../../models/ComponentProps/MenuBarProps";
 import { getMenubarStyles } from "./MenubarStyles";
+import useOpenStore from "../../store/useOpenStore";
 
-const MenuBar: React.FC<MenuBarProps> = (props: MenuBarProps) => {
+const MenuBar: React.FC = () => {
   const styles = getMenubarStyles();
-  const { open, setOpen } = props;
+  const { open, setOpen } = useOpenStore();
   const navigate = useNavigate();
 
   const toggleDrawer = (newOpen: boolean) => () => {

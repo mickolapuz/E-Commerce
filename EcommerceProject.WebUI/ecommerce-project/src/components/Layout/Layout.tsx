@@ -7,13 +7,13 @@ import Cart from "../../pages/Cart";
 import Menu from "../../pages/Menu";
 import Order from "../../pages/Order";
 import { COLOR_PALETTE } from "../../styles/constant";
-import { useState } from "react";
+import useOpenStore from "../../store/useOpenStore";
 
 const Layout: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const { open } = useOpenStore();
 
   const renderMenuBar: Function = () => {
-    return <MenuBar open={open} setOpen={setOpen} />;
+    return <MenuBar />;
   };
 
   return (
