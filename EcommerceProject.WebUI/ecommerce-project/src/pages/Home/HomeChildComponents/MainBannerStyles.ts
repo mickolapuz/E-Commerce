@@ -34,7 +34,7 @@ export const getMainBannerStyles = (theme: Theme) => ({
     },
     [theme.breakpoints.up("xl")]: {
       height: "400px",
-      width: "85vw", // ✅ Use percentage width for consistency
+      width: "85vw",
       maxWidth: "1200px"
     },
     backgroundImage: "url('/MainBanner.jpg')",
@@ -49,7 +49,7 @@ export const getMainBannerStyles = (theme: Theme) => ({
     position: "absolute",
     top: 0,
     left: 0,
-    width: "100%", // ✅ Stays within box1 boundaries
+    width: "100%",
     height: "100%",
     backgroundColor: "rgba(50, 25, 0, 0.6)",
     filter: "sepia(90%) brightness(0%)"

@@ -1,26 +1,14 @@
 import { Box, Container, Grid, Typography, Link, IconButton } from "@mui/material";
 import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
+import { getFooterStyles } from "./FooterStyles";
+import useOpenStore from "../../../store/useOpenStore";
 
 const Footer = () => {
+  const { open } = useOpenStore();
+  const styles = getFooterStyles(open);
+
   return (
-    <Box
-      sx={{
-        width: {
-          xs: "100%",
-          sm: "100%",
-          md: "100%",
-          lg: "100%",
-          xl: "1870px" // Matches MainContent maxWidth
-        },
-        maxWidth: "1870px", // Ensures it doesn't exceed MainContent
-        mx: "auto", // Centers it
-        backgroundColor: "#212121",
-        color: "white",
-        py: { xs: 2, sm: 4 },
-        mt: 5,
-        borderRadius: 2 // Optional: Match MainContent rounding
-      }}
-    >
+    <Box sx={styles.box}>
       <Container>
         <Grid container spacing={{ xs: 1, sm: 3 }} justifyContent="center">
           <Grid item xs={12} sm={6} md={4} textAlign="center">

@@ -8,11 +8,13 @@ import StoreIcon from "@mui/icons-material/Store";
 import { COLOR_PALETTE } from "../../styles/constant";
 import { useNavigate } from "react-router-dom";
 import { getMenuItemListStyles } from "./MenuItemListStyles";
+import useOpenStore from "../../store/useOpenStore";
 
 const MenuItemList: React.FC<MenuItemListProps> = (props: MenuItemListProps) => {
   const styles = getMenuItemListStyles();
   const navigate = useNavigate();
-  const { toggleDrawer, open } = props;
+  const { toggleDrawer } = props;
+  const { open } = useOpenStore();
 
   const MenuList = [
     {

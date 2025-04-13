@@ -2,9 +2,11 @@ import { Divider, Grid, Typography } from "@mui/material";
 import { getFeaturedCategoriesStyles } from "./FeaturedCategoriesStyles";
 import CustomCard from "../../../components/Card/Card";
 import { FeaturedDrinksTestData, FeaturedFoodsTestData, FeaturedProductsTestData } from "../TestData";
+import useOpenStore from "../../../store/useOpenStore";
 
 const FeaturedCategories = () => {
-  const styles = getFeaturedCategoriesStyles();
+  const { open } = useOpenStore();
+  const styles = getFeaturedCategoriesStyles(open);
 
   const RenderFeaturedDrinks: Function = () => {
     const FeaturedDrinks = FeaturedDrinksTestData;
@@ -78,21 +80,21 @@ const FeaturedCategories = () => {
         <Typography variant="h2" fontWeight="bold" component="div" sx={styles.typography}>
           Most Popular Drinks
         </Typography>
-        <Grid>{RenderFeaturedDrinks()}</Grid>
+        {RenderFeaturedDrinks()}
       </Grid>
       <Divider sx={styles.divider} />
       <Grid sx={styles.grid}>
         <Typography variant="h2" fontWeight="bold" component="div" sx={styles.typography}>
           Most Popular Food
         </Typography>
-        <Grid>{RenderFeaturedFood()}</Grid>
+        {RenderFeaturedFood()}
       </Grid>
       <Divider sx={styles.divider} />
       <Grid sx={styles.grid}>
         <Typography variant="h2" fontWeight="bold" component="div" sx={styles.typography}>
           Most Popular Products
         </Typography>
-        <Grid>{RenderFeaturedProducts()}</Grid>
+        {RenderFeaturedProducts()}
       </Grid>
     </>
   );

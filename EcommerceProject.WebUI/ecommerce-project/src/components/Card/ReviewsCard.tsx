@@ -1,13 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, Box } from "@mui/material";
 import { Rating } from "@mui/material";
-
-interface ReviewsCardProps {
-  name: string;
-  date: string;
-  review: string;
-  rating: number;
-}
+import { ReviewsCardProps } from "../../models/ComponentProps/ReviewsCardProps";
 
 const ReviewsCard: React.FC<ReviewsCardProps> = ({ name, date, review, rating }) => {
   return (
