@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MenuBar from "../Menubar/Menubar";
 import Home from "../../pages/Home/Home";
 import Admin from "../../pages/Admin";
-import Cart from "../../pages/Cart";
+import Cart from "../../pages/Cart/Cart";
 import Menu from "../../pages/Menu";
 import Order from "../../pages/Order";
 import { COLOR_PALETTE } from "../../styles/constant";
@@ -38,8 +38,8 @@ const MainContent: React.FC<{ open: boolean }> = ({ open }) => {
           lg: "100%",
           xl: open ? "calc(1870px - 250px)" : "1870px"
         },
-        maxWidth: "1870px",
-        height: "auto",
+        maxHeight: "calc(100vh - 80px)",
+        overflowY: "auto",
         borderRadius: 2,
         boxShadow: 3,
         p: 1,
@@ -50,7 +50,20 @@ const MainContent: React.FC<{ open: boolean }> = ({ open }) => {
           sm: -1,
           md: -1,
           lg: -2,
-          xl: open ? -13.5 : -45.5
+          xl: open ? -14.5 : -45.5
+        },
+        "&::-webkit-scrollbar": {
+          width: "6px"
+        },
+        "&::-webkit-scrollbar-track": {
+          background: "transparent"
+        },
+        "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "#aaa",
+          borderRadius: "8px"
+        },
+        "&::-webkit-scrollbar-thumb:hover": {
+          backgroundColor: "#888"
         }
       }}
     >
