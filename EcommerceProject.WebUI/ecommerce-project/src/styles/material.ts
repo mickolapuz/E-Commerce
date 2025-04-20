@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+import { COLOR_PALETTE } from "./constant";
 
 const TYPOGRAPHY = {
   fontFamily: "Roboto, sans-serif",
@@ -54,5 +55,35 @@ export const theme = createTheme({
       secondary: "#fff"
     }
   },
-  typography: TYPOGRAPHY
+  typography: TYPOGRAPHY,
+  components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: COLOR_PALETTE.darkEspresso.main
+          },
+          "& .MuiInputBase-input": {
+            color: COLOR_PALETTE.darkEspresso.main
+          },
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: COLOR_PALETTE.darkEspresso.main
+          }
+        }
+      }
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: COLOR_PALETTE.darkEspresso.main,
+          fontWeight: "bold",
+
+          "&.Mui-focused": {
+            color: COLOR_PALETTE.darkEspresso.main,
+            fontWeight: "bold"
+          }
+        }
+      }
+    }
+  }
 });
