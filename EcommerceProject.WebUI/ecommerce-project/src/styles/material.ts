@@ -76,11 +76,8 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           color: COLOR_PALETTE.darkEspresso.main,
-          fontWeight: "bold",
-
           "&.Mui-focused": {
-            color: COLOR_PALETTE.darkEspresso.main,
-            fontWeight: "bold"
+            color: COLOR_PALETTE.darkEspresso.main
           }
         }
       }

@@ -13,7 +13,9 @@ const DeliveryDetails: React.FC<DeliveryDetailsProps> = (props: DeliveryDetailsP
 
   return (
     <div>
-      <Typography variant="h4">Delivery Details: </Typography>
+      <Typography variant="h4" sx={styles.title}>
+        Delivery Details:{" "}
+      </Typography>
       <Grid container gap={2} sx={styles.grid}>
         <Grid>
           <TextInput
