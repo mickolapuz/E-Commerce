@@ -1,3 +1,5 @@
+import { COLOR_PALETTE } from "../../../styles/constant";
+
 export const getDeliveryDetailsStyles = () => ({
   textField: {
     backgroundColor: "white"
@@ -7,5 +9,8 @@ export const getDeliveryDetailsStyles = () => ({
     flexDirection: "column",
     marginTop: "10px",
     maxWidth: "600px"
+  },
+  title: {
+    color: COLOR_PALETTE.darkEspresso.main
   }
 });

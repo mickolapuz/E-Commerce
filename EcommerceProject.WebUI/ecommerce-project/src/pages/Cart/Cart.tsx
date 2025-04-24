@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import DeliveryDetails from "./CartChildComponents/DeliveryDetails";
 import { useState } from "react";
+import OrderDetails from "./CartChildComponents/OrderDetails";
 
 export const CART_DEFAULT_FORM_VALUES = {
   //#region Delivery Details
@@ -17,10 +18,15 @@ const Cart = () => {
     return <DeliveryDetails formValues={formValues} setFormValues={setFormValues} />;
   };
 
+  const RenderOrderDetails: Function = () => {
+    return <OrderDetails />;
+  };
+
   return (
     <div>
       <Grid container spacing={2} direction="column">
         <Grid>{RenderDeliveryDetails()}</Grid>
+        <Grid>{RenderOrderDetails()}</Grid>
       </Grid>
     </div>
   );
