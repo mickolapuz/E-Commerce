@@ -1,5 +1,5 @@
-import { Grid, Typography } from "@mui/material";
-import OrderBox from "../../../components/Box/Box";
+import { Divider, Grid, Typography } from "@mui/material";
+import OrderBox from "../../../components/Box/OrderBox";
 import { getOrderDetailsStyles } from "./OrderDetailsStyles";
 import { OrdersTestData } from "../TestData";
 
@@ -19,6 +19,7 @@ const OrderDetails = () => {
       {testData ? (
         testData.map((orderData, index) => (
           <Grid key={index} sx={styles.gridOrderBox}>
+            {index !== 0 && <Divider />}
             <OrderBox
               order={orderData.order}
               orderCount={orderData.orderCount}

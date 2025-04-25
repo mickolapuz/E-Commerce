@@ -50,7 +50,7 @@ const MainContent: React.FC<{ open: boolean }> = ({ open }) => {
           sm: -1,
           md: -1,
           lg: -2,
-          xl: open ? -14.5 : -45.5
+          xl: open ? -14.5 : -46
         },
         "&::-webkit-scrollbar": {
           width: "6px"
