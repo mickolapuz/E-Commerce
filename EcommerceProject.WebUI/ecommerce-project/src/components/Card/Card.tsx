@@ -2,27 +2,19 @@ import React from "react";
 import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
 import { COLOR_PALETTE } from "../../styles/constant";
 import { CardProps } from "../../models/ComponentProps/CardProps";
+import { getCardStyles } from "./CardStyles";
 
 const CustomCard: React.FC<CardProps> = ({ id, name, description, image, price }) => {
+  const styles = getCardStyles();
+
   return (
-    <Card
-      sx={{
-        maxWidth: 345,
-        height: 400,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        border: "2px solid #8B5E3C",
-        borderRadius: "8px",
-        margin: "16px"
-      }}
-    >
+    <Card sx={styles.card}>
       <CardMedia key={id} component="img" height="250" image={image} alt={name} />
-      <CardContent sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
+      <CardContent sx={styles.cardContent}>
         <Typography variant="h4" component="div" color={COLOR_PALETTE.darkEspresso.main} mb={1}>
           {name}
         </Typography>
-        <Typography variant="body2" color={COLOR_PALETTE.mediumBrown.main} sx={{ flexGrow: 1, minHeight: 50 }}>
+        <Typography variant="body2" color={COLOR_PALETTE.mediumBrown.main} sx={styles.description}>
           {description}
         </Typography>
         <Box mt="auto" display="flex" justifyContent="flex-end">

@@ -7,7 +7,7 @@ export const getDeliveryDetailsStyles = () => ({
   grid: {
     display: "flex",
     flexDirection: "column",
-    marginTop: "10px",
+    marginTop: "20px",
     maxWidth: "600px"
   },
   title: {
