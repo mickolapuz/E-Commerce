@@ -33,9 +33,9 @@ export const getBillingDetailsStyles = () => ({
     justifyContent: "space-between"
   },
   discountGrid: {
-    marginTop: 3
+    marginTop: 1
   },
   divider: {
-    marginTop: 1
+    marginTop: 5
   }
 });
