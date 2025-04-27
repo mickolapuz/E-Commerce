@@ -2,7 +2,7 @@ import { COLOR_PALETTE } from "../../../styles/constant";
 
 export const getDeliveryDetailsStyles = () => ({
   textField: {
-    backgroundColor: "white"
+    backgroundColor: COLOR_PALETTE.white.opacity50
   },
   grid: {
     display: "flex",
