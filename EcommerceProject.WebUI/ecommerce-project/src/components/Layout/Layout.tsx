@@ -5,7 +5,7 @@ import Home from "../../pages/Home/Home";
 import Admin from "../../pages/Admin";
 import Cart from "../../pages/Cart/Cart";
 import Menu from "../../pages/Menu";
-import Order from "../../pages/Order";
+import Order from "../../pages/Order/Order";
 import { COLOR_PALETTE } from "../../styles/constant";
 import useOpenStore from "../../store/useOpenStore";
 

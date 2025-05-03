@@ -9,6 +9,7 @@ const TextInput: React.FC<TextInputProps> = ({
   type = "text",
   placeholder = "",
   error = false,
+  size,
   helperText = "",
   fullWidth = true,
   disabled = false,
@@ -26,6 +27,7 @@ const TextInput: React.FC<TextInputProps> = ({
       type={type}
       placeholder={placeholder}
       error={error}
+      size={size}
       helperText={helperText}
       fullWidth={fullWidth}
       disabled={disabled}
