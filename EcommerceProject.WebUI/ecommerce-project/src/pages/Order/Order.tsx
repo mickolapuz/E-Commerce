@@ -25,7 +25,7 @@ const Order = () => {
 
   const RenderTrackerTextField = () => {
     return (
-      <Grid display="flex" gap={2}>
+      <Grid sx={styles.trackerTextFieldGrid}>
         <TextInput
           label="Order ID"
           value={formValues.orderID}
@@ -45,13 +45,13 @@ const Order = () => {
       <>
         {hasData && (
           <Grid container sx={styles.resultsContainer}>
-            <Grid sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <Grid sx={styles.resultsGrid}>
               <Typography variant="h6">Order ID:</Typography>
               <Typography variant="h6">Delivery Address:</Typography>
               <Typography variant="h6">Delivery Date:</Typography>
               <Typography variant="h6">Status:</Typography>
             </Grid>
-            <Grid sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <Grid sx={styles.resultsGrid}>
               <Typography variant="h6">95233</Typography>
               <Typography variant="h6">123 Main St, City, Country</Typography>
               <Typography variant="h6">2023-10-01</Typography>
@@ -60,7 +60,7 @@ const Order = () => {
           </Grid>
         )}
         {!hasData && (
-          <Typography variant="h6" sx={{ marginTop: "40px" }}>
+          <Typography variant="h6" sx={styles.noResultsText}>
             No Results Found.
           </Typography>
         )}
@@ -70,23 +70,13 @@ const Order = () => {
 
   return (
     <div>
-      <Grid
-        container
-        sx={{
-          alignItems: "center",
-          marginTop: "50px",
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          height: "400px"
-        }}
-      >
+      <Grid container sx={styles.gridContainer}>
         <Grid>
           <Typography variant="h3" gutterBottom>
             Bean & Co. Track and Trace Order
           </Typography>
         </Grid>
-        <Grid sx={{ width: "400px", marginTop: "20px" }}>{RenderTrackerTextField()}</Grid>
+        <Grid sx={styles.renderResultsGrid}>{RenderTrackerTextField()}</Grid>
         <Grid>{RenderResults()}</Grid>
       </Grid>
     </div>
