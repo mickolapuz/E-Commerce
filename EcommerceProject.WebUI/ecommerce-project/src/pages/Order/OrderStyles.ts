@@ -1,6 +1,27 @@
 import { COLOR_PALETTE } from "../../styles/constant";
 
 export const getOrderStyles = () => ({
+  trackerTextFieldGrid: {
+    display: "flex",
+    gap: 2
+  },
+  resultsGrid: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 1
+  },
+  gridContainer: {
+    alignItems: "center",
+    marginTop: "50px",
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    height: "400px"
+  },
+  renderResultsGrid: {
+    width: "400px",
+    marginTop: "20px"
+  },
   title: {
     color: COLOR_PALETTE.darkEspresso.main
   },
@@ -27,5 +48,8 @@ export const getOrderStyles = () => ({
     display: "flex",
     flexDirection: "row",
     gap: 10
+  },
+  noResultsText: {
+    marginTop: "40px"
   }
 });
