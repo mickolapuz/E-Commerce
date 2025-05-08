@@ -8,6 +8,7 @@ import Menu from "../../pages/Menu";
 import Order from "../../pages/Order/Order";
 import { COLOR_PALETTE } from "../../styles/constant";
 import useOpenStore from "../../store/useOpenStore";
+import Login from "../../pages/Auth/Login/Login";
 
 const Layout: React.FC = () => {
   const { open } = useOpenStore();
@@ -38,8 +39,9 @@ const MainContent: React.FC<{ open: boolean }> = ({ open }) => {
           lg: "100%",
           xl: open ? "calc(1870px - 250px)" : "1870px"
         },
-        maxHeight: "calc(100vh - 80px)",
-        overflowY: "auto",
+        maxHeight: window.location.pathname === "/login" ? "89vh" : `calc(100vh - 80px)`,
+        minHeight: "89vh",
+        overflowY: window.location.pathname === "/login" ? "none" : "auto",
         borderRadius: 2,
         boxShadow: 3,
         p: 1,
@@ -81,6 +83,7 @@ const Content: React.FC = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </main>
   );
